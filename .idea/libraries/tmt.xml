@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="tmt">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/java/com/flansmod/client/tmt.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
