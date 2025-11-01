@@ -1,0 +1,79 @@
+# HFR Clowder 区域配置文件
+# 配置各种功能区域的产出和消耗
+
+# 居民区配置
+residential:
+  # 建造成本（消耗派系银行金钱）
+  buildCost: 1000.0
+  # 每小时每等级产出人力
+  manpowerProduction: 10.0
+  # 每小时每等级产出适役人口
+  eligiblePopProduction: 2.0
+  # 人力消耗（每小时每等级）
+  manpowerCost: 0.0
+  # 适役人口消耗
+  eligiblePopCost: 0.0
+  # 政治点数产出
+  politicalPowerProduction: 0.0
+  # 科研点数产出
+  researchPointsProduction: 0.0
+
+# 行政区配置
+administrative:
+  buildCost: 1500.0
+  manpowerProduction: 5.0
+  eligiblePopProduction: 0.0
+  manpowerCost: 0.0
+  eligiblePopCost: 0.0
+  politicalPowerProduction: 1.0
+  researchPointsProduction: 0.0
+
+# 矿产区配置
+mining:
+  buildCost: 2000.0
+  manpowerProduction: 0.0
+  eligiblePopProduction: 0.0
+  # 每小时消耗人力
+  manpowerCost: 5.0
+  eligiblePopCost: 0.0
+  politicalPowerProduction: 0.0
+  researchPointsProduction: 0.0
+  # 矿物产出（每小时每等级）
+  oreOutput:
+    - item: minecraft:iron_ore
+      min: 1
+      max: 5
+    - item: minecraft:coal
+      min: 2
+      max: 8
+    - item: minecraft:gold_ore
+      min: 0
+      max: 2
+    - item: minecraft:diamond
+      min: 0
+      max: 1
+
+# 科研区配置
+research:
+  buildCost: 3000.0
+  manpowerProduction: 0.0
+  eligiblePopProduction: 0.0
+  manpowerCost: 0.0
+  # 每小时消耗适役人口
+  eligiblePopCost: 3.0
+  politicalPowerProduction: 0.0
+  # 每小时产出科研点数
+  researchPointsProduction: 5.0
+
+# 工业区配置
+industrial:
+  buildCost: 2500.0
+  manpowerProduction: 0.0
+  eligiblePopProduction: 0.0
+  manpowerCost: 0.0
+  eligiblePopCost: 0.0
+  politicalPowerProduction: 0.0
+  researchPointsProduction: 0.0
+  # 工厂建造成本
+  civilianFactoryCost: 3000.0
+  militaryFactoryCost: 5000.0

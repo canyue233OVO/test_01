@@ -1,0 +1,244 @@
+# HFR Clowder 科技树配置文件
+# 配置可研究的科技和解锁的物品/生产项目
+
+technologies:
+  # ========== 工业科技线 ==========
+  # 基础工业
+  - id: basic_industry
+    name: 基础工业
+    description: 解锁基础工业设施
+    category: industry
+    cost: 100.0  # 科研点数成本
+    researchTime: 50.0  # 研究时间（进度）
+    prerequisites: []
+    unlocks:
+      items:
+        - minecraft:iron_ingot
+        - minecraft:coal
+      production:
+        - basic_tools
+  
+  # 高级工业
+  - id: advanced_industry
+    name: 高级工业
+    description: 解锁高级工业设施
+    category: industry
+    cost: 250.0
+    researchTime: 100.0
+    prerequisites: [basic_industry]
+    unlocks:
+      items:
+        - minecraft:diamond
+        - minecraft:gold_ingot
+      production:
+        - advanced_tools
+    effects:
+      civilianFactoryOutput: 1.10
+  
+  # 自动化生产
+  - id: automation
+    name: 自动化生产
+    description: 大幅提升生产效率
+    category: industry
+    cost: 500.0
+    researchTime: 150.0
+    prerequisites: [advanced_industry]
+    effects:
+      productionSpeed: 1.25
+      civilianFactoryOutput: 1.15
+  
+  # ========== 军事科技线 ==========
+  # 基础武器
+  - id: basic_weapons
+    name: 基础武器
+    description: 解锁基础武器生产
+    category: military
+    cost: 80.0
+    researchTime: 40.0
+    prerequisites: []
+    unlocks:
+      items:
+        - minecraft:iron_sword
+        - minecraft:bow
+      production:
+        - rifle
+        - pistol
+  
+  # 高级武器
+  - id: advanced_weapons
+    name: 高级武器
+    description: 解锁高级武器系统
+    category: military
+    cost: 200.0
+    researchTime: 80.0
+    prerequisites: [basic_weapons]
+    unlocks:
+      production:
+        - machine_gun
+        - sniper_rifle
+        - submachine_gun
+  
+  # 重型武器
+  - id: heavy_weapons
+    name: 重型武器
+    description: 解锁重型武器平台
+    category: military
+    cost: 400.0
+    researchTime: 120.0
+    prerequisites: [advanced_weapons]
+    unlocks:
+      production:
+        - heavy_machine_gun
+        - rocket_launcher
+        - grenade_launcher
+  
+  # 载具技术
+  - id: vehicle_tech
+    name: 载具技术
+    description: 解锁军用载具
+    category: military
+    cost: 300.0
+    researchTime: 100.0
+    prerequisites: [basic_weapons, basic_industry]
+    unlocks:
+      production:
+        - jeep
+        - truck
+        - apc
+  
+  # 坦克技术
+  - id: tank_tech
+    name: 坦克技术
+    description: 解锁坦克生产
+    category: military
+    cost: 600.0
+    researchTime: 150.0
+    prerequisites: [vehicle_tech, heavy_weapons]
+    unlocks:
+      production:
+        - light_tank
+        - medium_tank
+  
+  # 高级坦克
+  - id: advanced_tank
+    name: 高级坦克技术
+    description: 解锁重型坦克
+    category: military
+    cost: 1000.0
+    researchTime: 200.0
+    prerequisites: [tank_tech]
+    unlocks:
+      production:
+        - heavy_tank
+        - super_heavy_tank
+  
+  # 航空技术
+  - id: aviation_tech
+    name: 航空技术
+    description: 解锁飞机生产
+    category: military
+    cost: 800.0
+    researchTime: 180.0
+    prerequisites: [vehicle_tech]
+    unlocks:
+      production:
+        - biplane
+        - fighter
+  
+  # 高级航空
+  - id: advanced_aviation
+    name: 高级航空技术
+    description: 解锁高级战机
+    category: military
+    cost: 1500.0
+    researchTime: 250.0
+    prerequisites: [aviation_tech]
+    unlocks:
+      production:
+        - jet_fighter
+        - bomber
+        - transport_plane
+  
+  # ========== 核技术线 ==========
+  # 核物理基础
+  - id: nuclear_physics
+    name: 核物理基础
+    description: 开始核技术研究
+    category: nuclear
+    cost: 1000.0
+    researchTime: 200.0
+    prerequisites: [advanced_industry]
+    unlocks:
+      items:
+        - hfr:item.nugget_u235
+  
+  # 核反应堆
+  - id: nuclear_reactor
+    name: 核反应堆技术
+    description: 建造核反应堆
+    category: nuclear
+    cost: 2000.0
+    researchTime: 300.0
+    prerequisites: [nuclear_physics]
+    unlocks:
+      production:
+        - nuclear_reactor
+  
+  # 核武器
+  - id: nuclear_weapons
+    name: 核武器技术
+    description: 解锁核武器生产（奇迹武器）
+    category: nuclear
+    cost: 3000.0
+    researchTime: 400.0
+    prerequisites: [nuclear_reactor]
+    unlocks:
+      production:
+        - atomic_bomb
+        - hydrogen_bomb
+  
+  # ========== 导弹科技线 ==========
+  # 火箭技术
+  - id: rocket_tech
+    name: 火箭技术
+    description: 基础火箭研究
+    category: missile
+    cost: 500.0
+    researchTime: 120.0
+    prerequisites: [heavy_weapons]
+    unlocks:
+      production:
+        - basic_rocket
+  
+  # 弹道导弹
+  - id: ballistic_missile
+    name: 弹道导弹技术
+    description: 远程打击能力
+    category: missile
+    cost: 1200.0
+    researchTime: 200.0
+    prerequisites: [rocket_tech]
+    unlocks:
+      production:
+        - ballistic_missile
+  
+  # 洲际导弹
+  - id: icbm
+    name: 洲际弹道导弹
+    description: 全球打击能力（奇迹武器）
+    category: missile
+    cost: 2500.0
+    researchTime: 350.0
+    prerequisites: [ballistic_missile, nuclear_physics]
+    unlocks:
+      production:
+        - icbm
+        - nuclear_icbm
+
+# 生产分类说明
+# category 类型：
+# - industry: 工业科技
+# - military: 军事科技
+# - nuclear: 核技术
+# - missile: 导弹技术
+# - other: 其他

@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * 区域配置类
  * 存储各种区域类型的配置参数
- * TODO: 后续从YAML配置文件读取
+ * 配置文件位置：config/hfr/zones.yml
  */
 public class ZoneConfig {
     
@@ -78,9 +78,12 @@ public class ZoneConfig {
     
     /**
      * 从配置文件加载
-     * TODO: 实现YAML配置文件读取
+     * 注意：YAML解析需要添加依赖，当前使用默认配置
+     * 如需从YAML加载，建议使用SnakeYAML库
      */
     public static void loadFromConfig() {
-        // 待实现：从config/hfr/zones.yml读取配置
+        // 可以在这里实现YAML配置文件读取
+        // 当前版本使用静态初始化的默认配置
+        // 配置文件已创建在 config/hfr/zones.yml 作为参考模板
     }
 }

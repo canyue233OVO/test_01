@@ -1,0 +1,165 @@
+# HFR Clowder 国策树配置文件
+# 配置不同意识形态的国策树和效果
+
+# 意识形态定义
+ideologies:
+  - democracy      # 民主主义
+  - communism      # 共产主义
+  - fascism        # 法西斯主义
+  - monarchy       # 君主制
+
+# 民主主义国策树
+democracy:
+  policies:
+    # 工业扩张
+    - id: industrial_expansion
+      name: 工业扩张
+      description: 增加民用工厂产出效率
+      cost: 70  # 研究天数
+      prerequisites: []
+      effects:
+        civilianFactoryOutput: 1.15  # 15%加成
+    
+    # 自由贸易
+    - id: free_trade
+      name: 自由贸易
+      description: 增加资源产出
+      cost: 70
+      prerequisites: [industrial_expansion]
+      effects:
+        resourceOutput: 1.20
+    
+    # 民主动员
+    - id: democratic_mobilization
+      name: 民主动员
+      description: 增加人力转化率
+      cost: 70
+      prerequisites: []
+      effects:
+        manpowerConversion: 1.10
+    
+    # 科研自由
+    - id: research_freedom
+      name: 科研自由
+      description: 增加科研点数产出
+      cost: 70
+      prerequisites: [democratic_mobilization]
+      effects:
+        researchSpeed: 1.15
+
+# 共产主义国策树
+communism:
+  policies:
+    # 计划经济
+    - id: planned_economy
+      name: 计划经济
+      description: 大幅增加军用工厂产出
+      cost: 70
+      prerequisites: []
+      effects:
+        militaryFactoryOutput: 1.25
+    
+    # 集体农场
+    - id: collective_farms
+      name: 集体农场
+      description: 增加人口增长
+      cost: 70
+      prerequisites: []
+      effects:
+        populationGrowth: 1.20
+    
+    # 全民动员
+    - id: total_mobilization
+      name: 全民动员
+      description: 大幅增加适役人口转化率
+      cost: 70
+      prerequisites: [collective_farms]
+      effects:
+        eligiblePopConversion: 1.30
+    
+    # 科技共享
+    - id: tech_sharing
+      name: 科技共享
+      description: 降低科技研究成本
+      cost: 70
+      prerequisites: [planned_economy]
+      effects:
+        researchCost: 0.85
+
+# 法西斯主义国策树
+fascism:
+  policies:
+    # 军国主义
+    - id: militarism
+      name: 军国主义
+      description: 军用工厂产出大幅提升
+      cost: 70
+      prerequisites: []
+      effects:
+        militaryFactoryOutput: 1.30
+    
+    # 强制征兵
+    - id: forced_conscription
+      name: 强制征兵
+      description: 极大增加适役人口比例
+      cost: 70
+      prerequisites: [militarism]
+      effects:
+        eligiblePopConversion: 1.50
+    
+    # 战争经济
+    - id: war_economy
+      name: 战争经济
+      description: 增加生产槽位
+      cost: 70
+      prerequisites: [militarism]
+      effects:
+        productionSlots: 2
+    
+    # 闪电战
+    - id: blitzkrieg
+      name: 闪电战
+      description: 减少生产时间
+      cost: 70
+      prerequisites: [war_economy]
+      effects:
+        productionSpeed: 1.25
+
+# 君主制国策树
+monarchy:
+  policies:
+    # 皇家特许
+    - id: royal_charter
+      name: 皇家特许
+      description: 增加政治点数产出
+      cost: 70
+      prerequisites: []
+      effects:
+        politicalPowerProduction: 1.25
+    
+    # 贵族动员
+    - id: noble_mobilization
+      name: 贵族动员
+      description: 增加人力产出
+      cost: 70
+      prerequisites: [royal_charter]
+      effects:
+        manpowerProduction: 1.20
+    
+    # 王室学院
+    - id: royal_academy
+      name: 王室学院
+      description: 增加科研产出
+      cost: 70
+      prerequisites: []
+      effects:
+        researchSpeed: 1.20
+    
+    # 帝国荣耀
+    - id: imperial_glory
+      name: 帝国荣耀
+      description: 全面小幅加成
+      cost: 100
+      prerequisites: [noble_mobilization, royal_academy]
+      effects:
+        allProduction: 1.10
