@@ -1,0 +1,110 @@
+# HFR Clowder 决议系统配置文件
+# 配置各种可激活的临时决议
+
+decisions:
+  # 战时动员
+  - id: war_mobilization
+    name: 战时动员
+    description: 临时大幅提升人力产出
+    # 政治点数成本
+    cost: 50.0
+    # 持续天数
+    duration: 30
+    # 冷却天数
+    cooldown: 90
+    effects:
+      manpowerProduction: 1.50
+      eligiblePopProduction: 1.30
+  
+  # 战争经济
+  - id: war_economy_decision
+    name: 战争经济
+    description: 临时提升军用工厂产出
+    cost: 75.0
+    duration: 45
+    cooldown: 120
+    effects:
+      militaryFactoryOutput: 1.40
+  
+  # 科研突击
+  - id: research_rush
+    name: 科研突击
+    description: 大幅加速科技研究
+    cost: 100.0
+    duration: 20
+    cooldown: 60
+    effects:
+      researchSpeed: 2.0
+  
+  # 经济刺激
+  - id: economic_stimulus
+    name: 经济刺激
+    description: 提升所有资源产出
+    cost: 80.0
+    duration: 30
+    cooldown: 90
+    effects:
+      resourceOutput: 1.25
+      civilianFactoryOutput: 1.20
+  
+  # 总动员
+  - id: total_mobilization_decision
+    name: 总动员
+    description: 极大提升适役人口转化
+    cost: 150.0
+    duration: 60
+    cooldown: 180
+    effects:
+      eligiblePopConversion: 2.0
+      manpowerConversion: 1.50
+  
+  # 军事改革
+  - id: military_reform
+    name: 军事改革
+    description: 提升生产效率
+    cost: 60.0
+    duration: 40
+    cooldown: 100
+    effects:
+      productionSpeed: 1.30
+  
+  # 外交攻势
+  - id: diplomatic_offensive
+    name: 外交攻势
+    description: 增加政治点数产出
+    cost: 40.0
+    duration: 30
+    cooldown: 60
+    effects:
+      politicalPowerProduction: 1.50
+  
+  # 工业现代化
+  - id: industrial_modernization
+    name: 工业现代化
+    description: 提升工厂产出
+    cost: 90.0
+    duration: 50
+    cooldown: 150
+    effects:
+      civilianFactoryOutput: 1.35
+      militaryFactoryOutput: 1.35
+  
+  # 人口增长计划
+  - id: population_growth
+    name: 人口增长计划
+    description: 加速人口增长
+    cost: 70.0
+    duration: 60
+    cooldown: 120
+    effects:
+      populationGrowth: 1.40
+  
+  # 资源开采加速
+  - id: mining_acceleration
+    name: 资源开采加速
+    description: 矿产区产出翻倍
+    cost: 85.0
+    duration: 30
+    cooldown: 90
+    effects:
+      miningOutput: 2.0

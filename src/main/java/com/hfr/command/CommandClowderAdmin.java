@@ -272,6 +272,10 @@ public class CommandClowderAdmin extends CommandBase {
 			} else
 				cmdInfo(sender, null);
 		}break;
+		case "reloadconfig": {
+			cmdReloadConfig(sender);
+		}break;
+		
 		
 		default: {
 			sender.addChatMessage(new ChatComponentText(ERROR + getCommandUsage(sender)));
@@ -1309,4 +1313,17 @@ public class CommandClowderAdmin extends CommandBase {
 	public static final String COMMAND = EnumChatFormatting.RED.toString();
 	public static final String COMMAND_LEADER = EnumChatFormatting.DARK_RED.toString();
 	public static final String COMMAND_ADMIN = EnumChatFormatting.DARK_PURPLE.toString();
+}
+/**
+ * 重新加载配置文件
+ */
+private void cmdReloadConfig(ICommandSender sender) {
+try {
+com.hfr.clowder.ConfigLoader.reloadAllConfigs();
+sender.addChatMessage(new ChatComponentText(TITLE + "配置已重新加载！"));
+sender.addChatMessage(new ChatComponentText(INFO + "所有配置已从YAML文件刷新"));
+} catch (Exception e) {
+sender.addChatMessage(new ChatComponentText(ERROR + "配置加载失败: " + e.getMessage()));
+e.printStackTrace();
+}
 }

@@ -1,0 +1,197 @@
+# HFR Clowder 人口系统配置文件
+# 配置人口增长、转化和随机产出
+
+# 人口系统基础配置
+population:
+  # 基础人口（每个派系成员贡献）
+  basePopulationPerMember: 1000.0
+  
+  # 人口增长率（每天，百分比）
+  dailyGrowthRate: 0.01  # 1%
+  
+  # 人口转化为适役人口的比例（每天）
+  eligiblePopulationConversionRate: 0.05  # 5%
+  
+  # 适役人口转化为人力的比例（每天）
+  manpowerConversionRate: 0.10  # 10%
+
+# 人口随机产出配置
+# 每小时，每1000人口有一定概率产出物品
+randomProduction:
+  # 检查间隔（小时）
+  checkInterval: 1.0
+  
+  # 每1000人口的基础产出概率
+  baseProbabilityPer1K: 0.05  # 5%
+  
+  # 可产出的物品列表
+  items:
+    # 基础资源
+    - item: minecraft:wheat
+      weight: 100  # 权重，越高越容易出现
+      minCount: 1
+      maxCount: 16
+      category: food
+    
+    - item: minecraft:bread
+      weight: 80
+      minCount: 1
+      maxCount: 8
+      category: food
+    
+    - item: minecraft:potato
+      weight: 90
+      minCount: 1
+      maxCount: 12
+      category: food
+    
+    - item: minecraft:carrot
+      weight: 90
+      minCount: 1
+      maxCount: 12
+      category: food
+    
+    # 木材资源
+    - item: minecraft:log
+      weight: 120
+      minCount: 1
+      maxCount: 32
+      category: materials
+    
+    - item: minecraft:planks
+      weight: 100
+      minCount: 1
+      maxCount: 64
+      category: materials
+    
+    # 基础材料
+    - item: minecraft:iron_ingot
+      weight: 40
+      minCount: 1
+      maxCount: 8
+      category: materials
+    
+    - item: minecraft:coal
+      weight: 60
+      minCount: 1
+      maxCount: 16
+      category: materials
+    
+    - item: minecraft:string
+      weight: 70
+      minCount: 1
+      maxCount: 8
+      category: materials
+    
+    - item: minecraft:leather
+      weight: 50
+      minCount: 1
+      maxCount: 4
+      category: materials
+    
+    # 稀有资源
+    - item: minecraft:gold_ingot
+      weight: 15
+      minCount: 1
+      maxCount: 3
+      category: rare
+    
+    - item: minecraft:diamond
+      weight: 5
+      minCount: 1
+      maxCount: 1
+      category: rare
+    
+    - item: minecraft:emerald
+      weight: 10
+      minCount: 1
+      maxCount: 2
+      category: rare
+    
+    # HFR特殊物品
+    - item: hfr:item.powder_iron
+      weight: 30
+      minCount: 1
+      maxCount: 4
+      category: hfr_materials
+    
+    - item: hfr:item.powder_copper
+      weight: 35
+      minCount: 1
+      maxCount: 6
+      category: hfr_materials
+    
+    - item: hfr:item.powder_steel
+      weight: 20
+      minCount: 1
+      maxCount: 3
+      category: hfr_materials
+    
+    - item: hfr:item.ingot_steel
+      weight: 25
+      minCount: 1
+      maxCount: 4
+      category: hfr_materials
+    
+    - item: hfr:item.plate_iron
+      weight: 30
+      minCount: 1
+      maxCount: 4
+      category: hfr_materials
+    
+    - item: hfr:item.plate_steel
+      weight: 20
+      minCount: 1
+      maxCount: 3
+      category: hfr_materials
+    
+    # 弹药（如果解锁了相关科技）
+    - item: flansmod:rifle_ammo
+      weight: 25
+      minCount: 8
+      maxCount: 32
+      category: ammo
+      requiredTech: [basic_weapons]
+    
+    - item: flansmod:pistol_ammo
+      weight: 30
+      minCount: 8
+      maxCount: 32
+      category: ammo
+      requiredTech: [basic_weapons]
+    
+    - item: flansmod:mg_ammo
+      weight: 15
+      minCount: 16
+      maxCount: 64
+      category: ammo
+      requiredTech: [advanced_weapons]
+    
+    # 工具
+    - item: minecraft:iron_pickaxe
+      weight: 20
+      minCount: 1
+      maxCount: 1
+      category: tools
+    
+    - item: minecraft:iron_axe
+      weight: 20
+      minCount: 1
+      maxCount: 1
+      category: tools
+    
+    - item: minecraft:iron_shovel
+      weight: 20
+      minCount: 1
+      maxCount: 1
+      category: tools
+
+# 分类说明：
+# - food: 食物
+# - materials: 基础材料
+# - rare: 稀有资源
+# - hfr_materials: HFR特殊材料
+# - ammo: 弹药
+# - tools: 工具
+# 
+# 注意：requiredTech字段可选，如果指定则需要派系解锁对应科技才能产出

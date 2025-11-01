@@ -1,0 +1,301 @@
+# HFR Clowder 生产系统配置文件
+# 配置可生产的物品、武器和载具
+
+production:
+  # ========== 基础物品 ==========
+  - id: basic_tools
+    name: 基础工具
+    category: tools
+    # 生产时间（小时）
+    productionTime: 1.0
+    # 是否需要民用工厂
+    requiresCivilianFactory: true
+    # 每个工厂的产出数量
+    outputPerFactory: 10
+    # 需要的科技前置
+    requiredTech: [basic_industry]
+    # 产出物品
+    output:
+      - item: minecraft:iron_pickaxe
+        count: 1
+      - item: minecraft:iron_axe
+        count: 1
+      - item: minecraft:iron_shovel
+        count: 1
+  
+  - id: advanced_tools
+    name: 高级工具
+    category: tools
+    productionTime: 2.0
+    requiresCivilianFactory: true
+    outputPerFactory: 5
+    requiredTech: [advanced_industry]
+    output:
+      - item: minecraft:diamond_pickaxe
+        count: 1
+      - item: minecraft:diamond_axe
+        count: 1
+  
+  # ========== 轻武器 ==========
+  - id: rifle
+    name: 步枪
+    category: weapons_small_arms
+    productionTime: 0.5
+    requiresCivilianFactory: false
+    requiresMilitaryFactory: true
+    outputPerFactory: 20
+    requiredTech: [basic_weapons]
+    output:
+      - item: flansmod:rifle
+        count: 1
+      - item: flansmod:rifle_ammo
+        count: 64
+  
+  - id: pistol
+    name: 手枪
+    category: weapons_small_arms
+    productionTime: 0.3
+    requiresMilitaryFactory: true
+    outputPerFactory: 30
+    requiredTech: [basic_weapons]
+    output:
+      - item: flansmod:pistol
+        count: 1
+      - item: flansmod:pistol_ammo
+        count: 64
+  
+  - id: machine_gun
+    name: 机枪
+    category: weapons_small_arms
+    productionTime: 1.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 10
+    requiredTech: [advanced_weapons]
+    output:
+      - item: flansmod:machine_gun
+        count: 1
+      - item: flansmod:mg_ammo
+        count: 128
+  
+  - id: sniper_rifle
+    name: 狙击步枪
+    category: weapons_small_arms
+    productionTime: 1.5
+    requiresMilitaryFactory: true
+    outputPerFactory: 5
+    requiredTech: [advanced_weapons]
+    output:
+      - item: flansmod:sniper_rifle
+        count: 1
+      - item: flansmod:sniper_ammo
+        count: 32
+  
+  # ========== 重型武器 ==========
+  - id: rocket_launcher
+    name: 火箭发射器
+    category: weapons_heavy
+    productionTime: 2.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 3
+    requiredTech: [heavy_weapons]
+    output:
+      - item: flansmod:rocket_launcher
+        count: 1
+      - item: flansmod:rocket
+        count: 8
+  
+  - id: grenade_launcher
+    name: 榴弹发射器
+    category: weapons_heavy
+    productionTime: 1.5
+    requiresMilitaryFactory: true
+    outputPerFactory: 5
+    requiredTech: [heavy_weapons]
+    output:
+      - item: flansmod:grenade_launcher
+        count: 1
+      - item: flansmod:grenade
+        count: 16
+  
+  # ========== 载具 ==========
+  - id: jeep
+    name: 吉普车
+    category: vehicles_light
+    productionTime: 5.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [vehicle_tech]
+    output:
+      - item: flansmod:jeep
+        count: 1
+  
+  - id: truck
+    name: 军用卡车
+    category: vehicles_light
+    productionTime: 6.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [vehicle_tech]
+    output:
+      - item: flansmod:truck
+        count: 1
+  
+  - id: apc
+    name: 装甲运兵车
+    category: vehicles_armored
+    productionTime: 10.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [vehicle_tech]
+    output:
+      - item: flansmod:apc
+        count: 1
+  
+  # ========== 坦克 ==========
+  - id: light_tank
+    name: 轻型坦克
+    category: vehicles_tank
+    productionTime: 15.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [tank_tech]
+    # 消耗资源
+    resourceCost:
+      steel: 50
+      fuel: 20
+    output:
+      - item: flansmod:light_tank
+        count: 1
+  
+  - id: medium_tank
+    name: 中型坦克
+    category: vehicles_tank
+    productionTime: 20.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [tank_tech]
+    resourceCost:
+      steel: 80
+      fuel: 30
+    output:
+      - item: flansmod:medium_tank
+        count: 1
+  
+  - id: heavy_tank
+    name: 重型坦克
+    category: vehicles_tank
+    productionTime: 30.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [advanced_tank]
+    resourceCost:
+      steel: 120
+      fuel: 50
+    output:
+      - item: flansmod:heavy_tank
+        count: 1
+  
+  # ========== 飞机 ==========
+  - id: fighter
+    name: 战斗机
+    category: aircraft
+    productionTime: 25.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [aviation_tech]
+    resourceCost:
+      aluminum: 60
+      fuel: 40
+    output:
+      - item: flansmod:fighter
+        count: 1
+  
+  - id: bomber
+    name: 轰炸机
+    category: aircraft
+    productionTime: 35.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [advanced_aviation]
+    resourceCost:
+      aluminum: 100
+      fuel: 80
+    output:
+      - item: flansmod:bomber
+        count: 1
+  
+  # ========== 奇迹武器 ==========
+  - id: atomic_bomb
+    name: 原子弹
+    category: wonder_weapons
+    productionTime: 100.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [nuclear_weapons]
+    # 奇迹武器标记
+    isWonderWeapon: true
+    resourceCost:
+      uranium235: 10
+      steel: 200
+    output:
+      - item: hfr:item.atom_bomb
+        count: 1
+  
+  - id: hydrogen_bomb
+    name: 氢弹
+    category: wonder_weapons
+    productionTime: 150.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [nuclear_weapons]
+    isWonderWeapon: true
+    resourceCost:
+      uranium235: 20
+      deuterium: 50
+      steel: 300
+    output:
+      - item: hfr:item.man_mike
+        count: 1
+  
+  - id: icbm
+    name: 洲际弹道导弹
+    category: wonder_weapons
+    productionTime: 120.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [icbm]
+    isWonderWeapon: true
+    resourceCost:
+      steel: 500
+      fuel: 200
+      electronics: 100
+    output:
+      - item: hfr:item.missile_generic
+        count: 1
+  
+  - id: nuclear_icbm
+    name: 核弹头洲际导弹
+    category: wonder_weapons
+    productionTime: 200.0
+    requiresMilitaryFactory: true
+    outputPerFactory: 1
+    requiredTech: [icbm, nuclear_weapons]
+    isWonderWeapon: true
+    resourceCost:
+      uranium235: 15
+      steel: 600
+      fuel: 250
+      electronics: 150
+    output:
+      - item: hfr:item.missile_nuclear
+        count: 1
+
+# 生产分类说明：
+# - tools: 工具
+# - weapons_small_arms: 轻武器
+# - weapons_heavy: 重武器
+# - vehicles_light: 轻型载具
+# - vehicles_armored: 装甲载具
+# - vehicles_tank: 坦克
+# - aircraft: 飞机
+# - wonder_weapons: 奇迹武器（需要大量资源和时间）
