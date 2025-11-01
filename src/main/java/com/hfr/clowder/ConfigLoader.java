@@ -1,5 +1,10 @@
 package com.hfr.clowder;
 
+import com.hfr.clowder.config.YamlConfigLoader;
+import com.hfr.main.MainRegistry;
+
+import java.io.File;
+
 /**
  * 配置加载器类
  * 负责从YAML配置文件加载各种系统的配置
@@ -11,51 +16,64 @@ package com.hfr.clowder;
  * - config/hfr/technologies.yml 科技树配置
  * - config/hfr/production.yml   生产系统配置
  * - config/hfr/population.yml   人口系统配置
- * 
- * 注意：当前版本使用代码中的默认配置
- * 如需实现YAML配置文件加载，建议使用SnakeYAML库：
- * 
- * 1. 在build.gradle中添加依赖：
- *    compile 'org.yaml:snakeyaml:1.33'
- * 
- * 2. 使用示例：
- *    Yaml yaml = new Yaml();
- *    InputStream inputStream = new FileInputStream("config/hfr/zones.yml");
- *    Map<String, Object> data = yaml.load(inputStream);
- * 
- * 当前所有配置文件已创建为模板，服务器管理员可以：
- * 1. 修改配置文件中的数值来调整游戏平衡
- * 2. 添加新的物品、科技、生产项目等
- * 3. 自定义国策树和决议效果
  */
 public class ConfigLoader {
     
+    private static File configDir = new File("config/hfr");
+    
     /**
      * 初始化所有配置
-     * 当前版本从代码中的默认值加载
+     * 首先加载默认配置，然后尝试从YAML文件覆盖
      */
     public static void loadAllConfigs() {
-        // 区域配置已通过静态初始化加载
-        ZoneConfig.loadFromConfig();
+        System.out.println("[HFR Clowder] 开始加载配置...");
         
-        // 国策树配置
+        // 确保配置目录存在
+        if (!configDir.exists()) {
+            configDir.mkdirs();
+            System.out.println("[HFR Clowder] 创建配置目录：" + configDir.getAbsolutePath());
+        }
+        
+        // 1. 区域配置
+        loadZoneConfig();
+        
+        // 2. 国策树配置（当前使用代码中的定义）
         // PolicyTree的配置已在代码中定义
         
-        // 决议系统配置
+        // 3. 决议系统配置（当前使用代码中的定义）
         // DecisionSystem的配置已在代码中定义
         
-        // 科技树配置
+        // 4. 科技树配置（当前使用代码中的定义）
         // TechnologyTree的配置已在代码中定义
         
-        // 生产系统配置
+        // 5. 生产系统配置（当前使用代码中的定义）
         // ProductionSystem的配置已在代码中定义
         
-        // 人口系统配置
+        // 6. 人口系统配置（当前使用代码中的定义）
         // PopulationSystem的配置已在代码中定义
         
-        System.out.println("[HFR Clowder] 配置已加载（使用默认配置）");
-        System.out.println("[HFR Clowder] 配置文件模板位于：config/hfr/");
-        System.out.println("[HFR Clowder] 如需从YAML文件加载配置，请实现ConfigLoader类的加载逻辑");
+        System.out.println("[HFR Clowder] 配置加载完成");
+        System.out.println("[HFR Clowder] 配置文件位置：" + configDir.getAbsolutePath());
+    }
+    
+    /**
+     * 加载区域配置
+     */
+    private static void loadZoneConfig() {
+        // 首先加载默认配置
+        ZoneConfig.loadFromConfig();
+        
+        // 尝试从YAML文件加载
+        File zonesFile = new File(configDir, "zones.yml");
+        if (zonesFile.exists()) {
+            try {
+                YamlConfigLoader.loadZoneConfig(zonesFile);
+            } catch (Exception e) {
+                MainRegistry.logger.error("[HFR Clowder] 区域配置加载失败，使用默认配置", e);
+            }
+        } else {
+            System.out.println("[HFR Clowder] zones.yml不存在，使用默认配置");
+        }
     }
     
     /**
@@ -63,7 +81,15 @@ public class ConfigLoader {
      * 可以在服务器运行时调用以更新配置
      */
     public static void reloadAllConfigs() {
+        System.out.println("[HFR Clowder] 重新加载配置...");
         loadAllConfigs();
-        System.out.println("[HFR Clowder] 配置已重新加载");
+        System.out.println("[HFR Clowder] 配置重新加载完成");
+    }
+    
+    /**
+     * 获取配置目录
+     */
+    public static File getConfigDir() {
+        return configDir;
     }
 }
