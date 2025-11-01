@@ -71,446 +71,446 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = RefStrings.MODID, name = RefStrings.NAME, version = RefStrings.VERSION, guiFactory = RefStrings.GUI_FACTORY)
 public class MainRegistry
 {
-	@Instance(RefStrings.MODID)
-	public static MainRegistry instance;
-	
-	@SidedProxy(clientSide = RefStrings.CLIENTSIDE, serverSide = RefStrings.SERVERSIDE)
-	public static ServerProxy proxy;
-	
-	@Metadata
-	public static ModMetadata meta;
-	
-	public static Logger logger;
-	
-	public static WorldGeneratorMoon worldGenMoon = new WorldGeneratorMoon();
-	
-	public static int bonusPointLimit = 10;
-	
-	public static int radarRange = 1000;
-	public static int radarBuffer = 30;
-	public static int radarAltitude = 55;
-	public static int radarConsumption = 2000;
+    @Instance(RefStrings.MODID)
+    public static MainRegistry instance;
+    
+    @SidedProxy(clientSide = RefStrings.CLIENTSIDE, serverSide = RefStrings.SERVERSIDE)
+    public static ServerProxy proxy;
+    
+    @Metadata
+    public static ModMetadata meta;
+    
+    public static Logger logger;
+    
+    public static WorldGeneratorMoon worldGenMoon = new WorldGeneratorMoon();
+    
+    public static int bonusPointLimit = 10;
+    
+    public static int radarRange = 1000;
+    public static int radarBuffer = 30;
+    public static int radarAltitude = 55;
+    public static int radarConsumption = 2000;
 
-	public static int coalgenProduction = 200;
-	public static int windmillProduction = 500;
-	public static int waterwheelProduction = 100;
-	public static int dieselProduction = 1000;
+    public static int coalgenProduction = 200;
+    public static int windmillProduction = 500;
+    public static int waterwheelProduction = 100;
+    public static int dieselProduction = 1000;
 
-	public static int fPlaneAltitude = 40;
-	public static int fTankAltitude = 30;
-	public static int fOffset = 2;
-	
-	public static int fieldBase = 100;
-	public static int fieldRange = 50;
-	public static int fieldHealth = 25;
-	public static int upRange = 16;
-	public static int upHealth = 50;
-	public static int fieldDet = 25;
-	public static int baseCooldown = 100;
-	public static int rangeCooldown = 100;
+    public static int fPlaneAltitude = 40;
+    public static int fTankAltitude = 30;
+    public static int fOffset = 2;
+    
+    public static int fieldBase = 100;
+    public static int fieldRange = 50;
+    public static int fieldHealth = 25;
+    public static int upRange = 16;
+    public static int upHealth = 50;
+    public static int fieldDet = 25;
+    public static int baseCooldown = 100;
+    public static int rangeCooldown = 100;
 
-	public static double exSpeed = 1D;
-	public static double exWeight = 2D;
-	public static int mult = 100;
-	public static double flanmult = 1D;
-	public static boolean flancalc = true;
+    public static double exSpeed = 1D;
+    public static double exWeight = 2D;
+    public static int mult = 100;
+    public static double flanmult = 1D;
+    public static boolean flancalc = true;
 
-	public static int abDelay = 40;
-	public static int abRange = 500;
-	public static double abSpeed = 0.125D;
-	public static int empRadius = 100;
-	public static int empDuration = 5 * 60 * 20;
-	public static int empParticle = 20;
-	public static boolean empSpecial = true;
-	public static int padBuffer = 100000000;
-	public static int padUse = 50000000;
-	public static int mHealth = 15;
-	public static int mDespawn = 5000;
-	public static int mSpawn = 6000;
-	public static int derrickBuffer = 100000;
-	public static int derrickUse = 1000;
-	public static int derrickLimiter = 250;
-	public static int derrickTimer = 50;
-	public static int refineryBuffer = 100000;
-	public static int refineryUse = 1000;
-	public static int refOil = 50;
-	public static int refHeavy = 20;
-	public static int refNaph = 15;
-	public static int refLight = 10;
-	public static int refPetro = 5;
+    public static int abDelay = 40;
+    public static int abRange = 500;
+    public static double abSpeed = 0.125D;
+    public static int empRadius = 100;
+    public static int empDuration = 5 * 60 * 20;
+    public static int empParticle = 20;
+    public static boolean empSpecial = true;
+    public static int padBuffer = 100000000;
+    public static int padUse = 50000000;
+    public static int mHealth = 15;
+    public static int mDespawn = 5000;
+    public static int mSpawn = 6000;
+    public static int derrickBuffer = 100000;
+    public static int derrickUse = 1000;
+    public static int derrickLimiter = 250;
+    public static int derrickTimer = 50;
+    public static int refineryBuffer = 100000;
+    public static int refineryUse = 1000;
+    public static int refOil = 50;
+    public static int refHeavy = 20;
+    public static int refNaph = 15;
+    public static int refLight = 10;
+    public static int refPetro = 5;
 
-	public static int nukeRadius = 100;
-	public static int nukeKill = 250;
-	public static float nukeStrength = 5F;
-	public static int nukeDist = 5;
-	public static int nukeStep = 5;
-	public static boolean nukeSimple = false;
-	public static int nukeDamage = 100;
+    public static int nukeRadius = 100;
+    public static int nukeKill = 250;
+    public static float nukeStrength = 5F;
+    public static int nukeDist = 5;
+    public static int nukeStep = 5;
+    public static boolean nukeSimple = false;
+    public static int nukeDamage = 100;
 
-	public static int mushLife = 15 * 20;
-	public static int mushScale = 80;
-	public static int fireDuration = 4 * 20;
-	public static int t1blast = 50;
-	public static int t1Damage = 100;
-	public static int t2blast = 100;
-	public static int t2Damage = 100;
-	public static int t3blast = 150;
-	public static int t3Damage = 100;
+    public static int mushLife = 15 * 20;
+    public static int mushScale = 80;
+    public static int fireDuration = 4 * 20;
+    public static int t1blast = 50;
+    public static int t1Damage = 100;
+    public static int t2blast = 100;
+    public static int t2Damage = 100;
+    public static int t3blast = 150;
+    public static int t3Damage = 100;
 
-	public static int superFishrate = 20;
-	public static int goodFishrate = 40;
-	public static int averageFishrate = 60;
-	public static int crapFishrate = 1000000;
-	public static int jamRate = 15 * 60;
-	public static int whaleChance = 5;
+    public static int superFishrate = 20;
+    public static int goodFishrate = 40;
+    public static int averageFishrate = 60;
+    public static int crapFishrate = 1000000;
+    public static int jamRate = 15 * 60;
+    public static int whaleChance = 5;
 
-	public static int uniRate = 60 * 3;
-	public static int uniJamRate = 60 * 15;
+    public static int uniRate = 60 * 3;
+    public static int uniJamRate = 60 * 15;
 
-	public static int temple = 10 * 60 * 3;
+    public static int temple = 10 * 60 * 3;
 
-	public static int factoryRate = 60 * 3;
-	public static int factoryConsumption = 300;
-	public static int factoryJamRate = 60 * 15;
+    public static int factoryRate = 60 * 3;
+    public static int factoryConsumption = 300;
+    public static int factoryJamRate = 60 * 15;
 
-	public static int coalRate = 60;
-	public static int coalJamRate = 60 * 30;
-	
-	public static int navalDamage = 100;
-	public static int railgunDamage = 100;
-	public static int railgunBuffer = 500000000;
-	public static int railgunUse = 250000000;
-	
-	public static int mlpf = 100;
+    public static int coalRate = 60;
+    public static int coalJamRate = 60 * 30;
+    
+    public static int navalDamage = 100;
+    public static int railgunDamage = 100;
+    public static int railgunBuffer = 500000000;
+    public static int railgunUse = 250000000;
+    
+    public static int mlpf = 100;
 
-	public static int caveCap = -10;
+    public static int caveCap = -10;
 
-	public static int crafting = 0;
+    public static int crafting = 0;
 
-	public static int mudrate = 10;
-	
-	public static boolean enableStocks = true;
-	public static boolean enableRadar = true;
+    public static int mudrate = 10;
+    
+    public static boolean enableStocks = true;
+    public static boolean enableRadar = true;
 
-	public static int fabricateCost = 30;
-	public static int warpCost = 15;
-	public static int renameCost = 10;
-	public static int territoryDelay = 5;
-	public static int territoryAmount = 50;
-	public static int prestigeDelay = 60 * 60 * 20;
-	public static int disbandDelay = 24 * 60 * 60 * 20;
-	//minute for war declare
-	public static int warDelay = 60 * 20;
-	public static boolean disableChests = true;
-	public static int mold = 5 * 60 * 60 * 20;
-	public static boolean freeRaid = false;
+    public static int fabricateCost = 30;
+    public static int warpCost = 15;
+    public static int renameCost = 10;
+    public static int territoryDelay = 5;
+    public static int territoryAmount = 50;
+    public static int prestigeDelay = 60 * 60 * 20;
+    public static int disbandDelay = 24 * 60 * 60 * 20;
+    //minute for war declare
+    public static int warDelay = 60 * 20;
+    public static boolean disableChests = true;
+    public static int mold = 5 * 60 * 60 * 20;
+    public static boolean freeRaid = false;
 
-	public static boolean bb_rng = false;
-	
-	public static boolean chatfilter = true;
-	
-	public static boolean freeRadar = false;
-	public static boolean sound = true;
-	public static boolean comparator = false;
+    public static boolean bb_rng = false;
+    
+    public static boolean chatfilter = true;
+    
+    public static boolean freeRadar = false;
+    public static boolean sound = true;
+    public static boolean comparator = false;
 
-	public static boolean border = false;
-	public static int borderBuffer = 0;
-	public static int borderPosX = 0;
-	public static int borderNegX = 0;
-	public static int borderPosZ = 0;
-	public static int borderNegZ = 0;
+    public static boolean border = false;
+    public static int borderBuffer = 0;
+    public static int borderPosX = 0;
+    public static int borderNegX = 0;
+    public static int borderPosZ = 0;
+    public static int borderNegZ = 0;
 
-	public static double coalChance = 0.04;
-	public static double ironChance = 0.05;
-	public static double goldChance = 0.01;
-	
-	public static int empID = 66;
-	
-	Random rand = new Random();
+    public static double coalChance = 0.04;
+    public static double ironChance = 0.05;
+    public static double goldChance = 0.01;
+    
+    public static int empID = 66;
+    
+    Random rand = new Random();
 
-	public static DamageSource blast = (new DamageSource("blast")).setExplosion().setDamageBypassesArmor().setDamageIsAbsolute();
-	public static DamageSource zyklon = (new DamageSource("zyklon")).setDamageBypassesArmor().setDamageIsAbsolute();
-	public static DamageSource wire = (new DamageSource("wire"));
-	
-	public static CreativeTabs tab = new CreativeTabHFR(CreativeTabs.getNextID(), "tabHFR");
-	
-	public static float smoothing = 0.0F;
-	
-	public static boolean hfr_powerlog = false;
-	
-	public static HashMap<String, String> sub = new HashMap();
-	
-	@EventHandler
-	public void PreLoad(FMLPreInitializationEvent PreEvent)
-	{
-		if(logger == null)
-			logger = PreEvent.getModLog();
-		
-		ModBlocks.mainRegistry();
-		ModItems.mainRegistry();
-		loadConfig(PreEvent);
-		CraftingManager.mainRegistry();
-		proxy.registerRenderInfo();
-		FluidHandler.init();
-		HFRPotion.init();
+    public static DamageSource blast = (new DamageSource("blast")).setExplosion().setDamageBypassesArmor().setDamageIsAbsolute();
+    public static DamageSource zyklon = (new DamageSource("zyklon")).setDamageBypassesArmor().setDamageIsAbsolute();
+    public static DamageSource wire = (new DamageSource("wire"));
+    
+    public static CreativeTabs tab = new CreativeTabHFR(CreativeTabs.getNextID(), "tabHFR");
+    
+    public static float smoothing = 0.0F;
+    
+    public static boolean hfr_powerlog = false;
+    
+    public static HashMap<String, String> sub = new HashMap();
+    
+    @EventHandler
+    public void PreLoad(FMLPreInitializationEvent PreEvent)
+    {
+        if(logger == null)
+            logger = PreEvent.getModLog();
+        
+        ModBlocks.mainRegistry();
+        ModItems.mainRegistry();
+        loadConfig(PreEvent);
+        CraftingManager.mainRegistry();
+        proxy.registerRenderInfo();
+        FluidHandler.init();
+        HFRPotion.init();
 
-		sub.put(regexify("tiananmen"), "nothing");
-		sub.put(regexify("sex mod"), "funnies");
-		sub.put(regexify("fuck"), "frick");
-		sub.put(regexify("penis"), "pee pee");
-		sub.put(regexify("hero"), "richard nixon");
-		sub.put(regexify("goddamn"), "goshdarn");
-		sub.put(regexify("damn"), "darn");
-		sub.put(regexify("chink"), "master");
-		sub.put(regexify(" ass "), " butté ");
-		sub.put(regexify("cracker"), "caucasian");
-		sub.put(regexify("india"), "south pakistan");
-		sub.put(regexify("gook"), "master");
-		sub.put(regexify("hentai"), "art");
-		sub.put(regexify("wally"), "walter");
-		sub.put(regexify(" god "), " Allah ");
-		sub.put(regexify("god "), "Allah ");
-		sub.put(regexify(" god"), " Allah");
-		sub.put(regexify("yahweh"), "YHWH");
-		
-		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GUIHandler());
-		
-		GameRegistry.registerTileEntity(TileEntityMachineSiren.class, "tileentity_hfr_siren");
-		GameRegistry.registerTileEntity(TileEntityMachineRadar.class, "tileentity_hfr_radar");
-		GameRegistry.registerTileEntity(TileEntityForceField.class, "tileentity_hfr_field");
-		GameRegistry.registerTileEntity(TileEntityVaultDoor.class, "tileentity_hfr_vault");
-		GameRegistry.registerTileEntity(TileEntityDummy.class, "tileentity_hfr_dummy");
-		GameRegistry.registerTileEntity(TileEntityHatch.class, "tileentity_hfr_hatch");
-		GameRegistry.registerTileEntity(TileEntityLaunchPad.class, "tileentity_hfr_launchpad");
-		GameRegistry.registerTileEntity(TileEntityChlorineSeal.class, "tileentity_hfr_gaschamber");
-		GameRegistry.registerTileEntity(TileEntityMachineDerrick.class, "tileentity_hfr_derrick");
-		GameRegistry.registerTileEntity(TileEntityDebug.class, "tileentity_hfr_devon_truck");
-		GameRegistry.registerTileEntity(TileEntityMachineRefinery.class, "tileentity_hfr_refinery");
-		GameRegistry.registerTileEntity(TileEntityRailgun.class, "tileentity_hfr_railgun");
-		GameRegistry.registerTileEntity(TileEntityTank.class, "tileentity_hfr_barrel");
-		GameRegistry.registerTileEntity(TileEntityNaval.class, "tileentity_hfr_naval");
-		GameRegistry.registerTileEntity(TileEntityDuct.class, "tileentity_hfr_duct");
-		GameRegistry.registerTileEntity(TileEntityHydro.class, "tileentity_hfr_hydro");
-		GameRegistry.registerTileEntity(TileEntityMachineNet.class, "tileentity_hfr_net");
-		GameRegistry.registerTileEntity(TileEntityMachineMarket.class, "tileentity_hfr_stonks");
-		GameRegistry.registerTileEntity(TileEntityDisplay.class, "tileentity_hfr_display");
-		GameRegistry.registerTileEntity(TileEntityMachineBuilder.class, "tileentity_hfr_builder");
-		GameRegistry.registerTileEntity(TileEntityMachineUni.class, "tileentity_hfr_university");
-		GameRegistry.registerTileEntity(TileEntityRBMKElement.class, "tileentity_hfr_rbmk_fuel");
-		GameRegistry.registerTileEntity(TileEntityMachineEMP.class, "tileentity_hfr_emp");
-		GameRegistry.registerTileEntity(TileEntityFlag.class, "tileentity_hfr_flag");
-		GameRegistry.registerTileEntity(TileEntityCap.class, "tileentity_hfr_cap");
-		GameRegistry.registerTileEntity(TileEntityFlagBig.class, "tileentity_hfr_flag_big");
-		GameRegistry.registerTileEntity(TileEntityProp.class, "tileentity_hfr_prop");
-		GameRegistry.registerTileEntity(TileEntityStatue.class, "tileentity_hfr_statue");
-		GameRegistry.registerTileEntity(TileEntityMachineGrainmill.class, "tileentity_hfr_mill");
-		GameRegistry.registerTileEntity(TileEntityMachineBlastFurnace.class, "tileentity_hfr_furnace");
-		GameRegistry.registerTileEntity(TileEntityBerlin.class, "tileentity_hfr_berlin");
-		GameRegistry.registerTileEntity(TileEntityBox.class, "tileentity_hfr_smelly_box");
-		GameRegistry.registerTileEntity(TileEntityMachineCoalMine.class, "tileentity_hfr_coalmine");
-		GameRegistry.registerTileEntity(TileEntityCoalGen.class, "tileentity_hfr_coalgenerator");
-		GameRegistry.registerTileEntity(TileEntityMachineFactory.class, "tileentity_hfr_factory");
-		GameRegistry.registerTileEntity(TileEntityProxy.class, "tileentity_hfr_energy_proxy");
-		GameRegistry.registerTileEntity(TileEntityFluidProxy.class, "tileentity_hfr_fluid_proxy");
-		GameRegistry.registerTileEntity(TileEntityComboProxy.class, "tileentity_hfr_combo_proxy");
-		GameRegistry.registerTileEntity(TileEntityBattery.class, "tileentity_hfr_battery");
-		GameRegistry.registerTileEntity(TileEntityMachineWindmill.class, "tileentity_hfr_windmill");
-		GameRegistry.registerTileEntity(TileEntityWaterWheel.class, "tileentity_hfr_waterwheel");
-		GameRegistry.registerTileEntity(TileEntityDieselGen.class, "tileentity_hfr_dieselgen");
-		GameRegistry.registerTileEntity(TileEntityRift.class, "tileentity_hfr_rift");
-		GameRegistry.registerTileEntity(TileEntityMachineTurbine.class, "tileentity_hfr_turbine");
-		GameRegistry.registerTileEntity(TileEntityTeleporter.class, "tileentity_hfr_teleporter");
-		GameRegistry.registerTileEntity(TileEntityMachineTemple.class, "tileentity_hfr_temple");
-		GameRegistry.registerTileEntity(TileEntityBlastDoor.class, "tileentity_hfr_blastdoor");
-		GameRegistry.registerTileEntity(TileEntityConquerer.class, "tileentity_hfr_conquest_flag");
-		GameRegistry.registerTileEntity(TileEntityOfficerChest.class, "tileentity_hfr_chest");
-		GameRegistry.registerTileEntity(TileEntityMarket.class, "tileentity_hfr_shop");
-		GameRegistry.registerTileEntity(TileEntityFoundry.class, "tileentity_hfr_foundry");
-		GameRegistry.registerTileEntity(TileEntityMachineSawmill.class, "tileentity_hfr_sawmill");
-		GameRegistry.registerTileEntity(TileEntityMachineEFurnace.class, "tileentity_hfr_efurnace");
+        sub.put(regexify("tiananmen"), "nothing");
+        sub.put(regexify("sex mod"), "funnies");
+        sub.put(regexify("fuck"), "frick");
+        sub.put(regexify("penis"), "pee pee");
+        sub.put(regexify("hero"), "richard nixon");
+        sub.put(regexify("goddamn"), "goshdarn");
+        sub.put(regexify("damn"), "darn");
+        sub.put(regexify("chink"), "master");
+        sub.put(regexify(" ass "), " butté ");
+        sub.put(regexify("cracker"), "caucasian");
+        sub.put(regexify("india"), "south pakistan");
+        sub.put(regexify("gook"), "master");
+        sub.put(regexify("hentai"), "art");
+        sub.put(regexify("wally"), "walter");
+        sub.put(regexify(" god "), " Allah ");
+        sub.put(regexify("god "), "Allah ");
+        sub.put(regexify(" god"), " Allah");
+        sub.put(regexify("yahweh"), "YHWH");
+        
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GUIHandler());
+        
+        GameRegistry.registerTileEntity(TileEntityMachineSiren.class, "tileentity_hfr_siren");
+        GameRegistry.registerTileEntity(TileEntityMachineRadar.class, "tileentity_hfr_radar");
+        GameRegistry.registerTileEntity(TileEntityForceField.class, "tileentity_hfr_field");
+        GameRegistry.registerTileEntity(TileEntityVaultDoor.class, "tileentity_hfr_vault");
+        GameRegistry.registerTileEntity(TileEntityDummy.class, "tileentity_hfr_dummy");
+        GameRegistry.registerTileEntity(TileEntityHatch.class, "tileentity_hfr_hatch");
+        GameRegistry.registerTileEntity(TileEntityLaunchPad.class, "tileentity_hfr_launchpad");
+        GameRegistry.registerTileEntity(TileEntityChlorineSeal.class, "tileentity_hfr_gaschamber");
+        GameRegistry.registerTileEntity(TileEntityMachineDerrick.class, "tileentity_hfr_derrick");
+        GameRegistry.registerTileEntity(TileEntityDebug.class, "tileentity_hfr_devon_truck");
+        GameRegistry.registerTileEntity(TileEntityMachineRefinery.class, "tileentity_hfr_refinery");
+        GameRegistry.registerTileEntity(TileEntityRailgun.class, "tileentity_hfr_railgun");
+        GameRegistry.registerTileEntity(TileEntityTank.class, "tileentity_hfr_barrel");
+        GameRegistry.registerTileEntity(TileEntityNaval.class, "tileentity_hfr_naval");
+        GameRegistry.registerTileEntity(TileEntityDuct.class, "tileentity_hfr_duct");
+        GameRegistry.registerTileEntity(TileEntityHydro.class, "tileentity_hfr_hydro");
+        GameRegistry.registerTileEntity(TileEntityMachineNet.class, "tileentity_hfr_net");
+        GameRegistry.registerTileEntity(TileEntityMachineMarket.class, "tileentity_hfr_stonks");
+        GameRegistry.registerTileEntity(TileEntityDisplay.class, "tileentity_hfr_display");
+        GameRegistry.registerTileEntity(TileEntityMachineBuilder.class, "tileentity_hfr_builder");
+        GameRegistry.registerTileEntity(TileEntityMachineUni.class, "tileentity_hfr_university");
+        GameRegistry.registerTileEntity(TileEntityRBMKElement.class, "tileentity_hfr_rbmk_fuel");
+        GameRegistry.registerTileEntity(TileEntityMachineEMP.class, "tileentity_hfr_emp");
+        GameRegistry.registerTileEntity(TileEntityFlag.class, "tileentity_hfr_flag");
+        GameRegistry.registerTileEntity(TileEntityCap.class, "tileentity_hfr_cap");
+        GameRegistry.registerTileEntity(TileEntityFlagBig.class, "tileentity_hfr_flag_big");
+        GameRegistry.registerTileEntity(TileEntityProp.class, "tileentity_hfr_prop");
+        GameRegistry.registerTileEntity(TileEntityStatue.class, "tileentity_hfr_statue");
+        GameRegistry.registerTileEntity(TileEntityMachineGrainmill.class, "tileentity_hfr_mill");
+        GameRegistry.registerTileEntity(TileEntityMachineBlastFurnace.class, "tileentity_hfr_furnace");
+        GameRegistry.registerTileEntity(TileEntityBerlin.class, "tileentity_hfr_berlin");
+        GameRegistry.registerTileEntity(TileEntityBox.class, "tileentity_hfr_smelly_box");
+        GameRegistry.registerTileEntity(TileEntityMachineCoalMine.class, "tileentity_hfr_coalmine");
+        GameRegistry.registerTileEntity(TileEntityCoalGen.class, "tileentity_hfr_coalgenerator");
+        GameRegistry.registerTileEntity(TileEntityMachineFactory.class, "tileentity_hfr_factory");
+        GameRegistry.registerTileEntity(TileEntityProxy.class, "tileentity_hfr_energy_proxy");
+        GameRegistry.registerTileEntity(TileEntityFluidProxy.class, "tileentity_hfr_fluid_proxy");
+        GameRegistry.registerTileEntity(TileEntityComboProxy.class, "tileentity_hfr_combo_proxy");
+        GameRegistry.registerTileEntity(TileEntityBattery.class, "tileentity_hfr_battery");
+        GameRegistry.registerTileEntity(TileEntityMachineWindmill.class, "tileentity_hfr_windmill");
+        GameRegistry.registerTileEntity(TileEntityWaterWheel.class, "tileentity_hfr_waterwheel");
+        GameRegistry.registerTileEntity(TileEntityDieselGen.class, "tileentity_hfr_dieselgen");
+        GameRegistry.registerTileEntity(TileEntityRift.class, "tileentity_hfr_rift");
+        GameRegistry.registerTileEntity(TileEntityMachineTurbine.class, "tileentity_hfr_turbine");
+        GameRegistry.registerTileEntity(TileEntityTeleporter.class, "tileentity_hfr_teleporter");
+        GameRegistry.registerTileEntity(TileEntityMachineTemple.class, "tileentity_hfr_temple");
+        GameRegistry.registerTileEntity(TileEntityBlastDoor.class, "tileentity_hfr_blastdoor");
+        GameRegistry.registerTileEntity(TileEntityConquerer.class, "tileentity_hfr_conquest_flag");
+        GameRegistry.registerTileEntity(TileEntityOfficerChest.class, "tileentity_hfr_chest");
+        GameRegistry.registerTileEntity(TileEntityMarket.class, "tileentity_hfr_shop");
+        GameRegistry.registerTileEntity(TileEntityFoundry.class, "tileentity_hfr_foundry");
+        GameRegistry.registerTileEntity(TileEntityMachineSawmill.class, "tileentity_hfr_sawmill");
+        GameRegistry.registerTileEntity(TileEntityMachineEFurnace.class, "tileentity_hfr_efurnace");
 
-		int id = 0;
-	    EntityRegistry.registerModEntity(EntityMissileAT.class, "entity_missile_v2AT", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileGeneric.class, "entity_missile_v2", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileIncendiary.class, "entity_missile_v2F", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileStrong.class, "entity_missile_large", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileIncendiaryStrong.class, "entity_missile_largeF", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileBurst.class, "entity_missile_korea", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileInferno.class, "entity_missile_koreaF", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileAntiBallistic.class, "entity_missile_anti", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileEMPStrong.class, "entity_missile_emp", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityNukeCloudSmall.class, "entity_mushroom_cloud", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileDecoy.class, "entity_missile_decoy", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileNuclear.class, "entity_missile_nuclear", id++, this, 1000, 1, true);
+        int id = 0;
+        EntityRegistry.registerModEntity(EntityMissileAT.class, "entity_missile_v2AT", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileGeneric.class, "entity_missile_v2", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileIncendiary.class, "entity_missile_v2F", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileStrong.class, "entity_missile_large", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileIncendiaryStrong.class, "entity_missile_largeF", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileBurst.class, "entity_missile_korea", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileInferno.class, "entity_missile_koreaF", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileAntiBallistic.class, "entity_missile_anti", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileEMPStrong.class, "entity_missile_emp", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityNukeCloudSmall.class, "entity_mushroom_cloud", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileDecoy.class, "entity_missile_decoy", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileNuclear.class, "entity_missile_nuclear", id++, this, 1000, 1, true);
 
-	    EntityRegistry.registerModEntity(EntityEMP.class, "entity_lingering_emp", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityBlast.class, "entity_deathblast", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityRailgunBlast.class, "entity_railgun_pellet", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityShell.class, "entity_naval_pellet", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityFlare.class, "entity_flaregun_pellet", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityPak.class, "entity_pak_rocket", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityGrenadeGas.class, "entity_hfr_gas_grenade", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityGrenadeNuclear.class, "entity_hfr_nuke_grenade", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityGrenadeBoxcar.class, "entity_hfr_grb_grenade", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityHook.class, "entity_hfr_hook_baall", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityEMP.class, "entity_lingering_emp", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityBlast.class, "entity_deathblast", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityRailgunBlast.class, "entity_railgun_pellet", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityShell.class, "entity_naval_pellet", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityFlare.class, "entity_flaregun_pellet", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityPak.class, "entity_pak_rocket", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityGrenadeGas.class, "entity_hfr_gas_grenade", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityGrenadeNuclear.class, "entity_hfr_nuke_grenade", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityGrenadeBoxcar.class, "entity_hfr_grb_grenade", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityHook.class, "entity_hfr_hook_baall", id++, this, 1000, 1, true);
 
-	    EntityRegistry.registerModEntity(EntityFarmer.class, "entity_hfr_slave", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityFarmer.class, "entity_hfr_slave", id++, this, 1000, 1, true);
 
-	    EntityRegistry.registerModEntity(EntityMissileMartin.class, "entity_missile_martin", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissilePegasus.class, "entity_missile_pegasus", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileSpear.class, "entity_missile_spear", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileShell.class, "entity_missile_shell", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileMartin.class, "entity_missile_martin", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissilePegasus.class, "entity_missile_pegasus", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileSpear.class, "entity_missile_spear", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileShell.class, "entity_missile_shell", id++, this, 1000, 1, true);
 
-	    EntityRegistry.registerModEntity(EntityMissileDevon1.class, "entity_missile_devon1", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileDevon2.class, "entity_missile_devon2", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileDevon3.class, "entity_missile_devon3", id++, this, 1000, 1, true);
-	    EntityRegistry.registerModEntity(EntityMissileCruise1.class, "entity_missile_cruise1", id++, this, 1000, 1, true);
-	
-		ForgeChunkManager.setForcedChunkLoadingCallback(this, new LoadingCallback() {
-			
-	        @Override
-	        public void ticketsLoaded(List<Ticket> tickets, World world) {
-	            for(Ticket ticket : tickets) {
-	            	
-	                if(ticket.getEntity() instanceof IChunkLoader) {
-	                    ((IChunkLoader)ticket.getEntity()).init(ticket);
-	                }
-	            }
-	        }
-	    });
+        EntityRegistry.registerModEntity(EntityMissileDevon1.class, "entity_missile_devon1", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileDevon2.class, "entity_missile_devon2", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileDevon3.class, "entity_missile_devon3", id++, this, 1000, 1, true);
+        EntityRegistry.registerModEntity(EntityMissileCruise1.class, "entity_missile_cruise1", id++, this, 1000, 1, true);
+    
+        ForgeChunkManager.setForcedChunkLoadingCallback(this, new LoadingCallback() {
+            
+            @Override
+            public void ticketsLoaded(List<Ticket> tickets, World world) {
+                for(Ticket ticket : tickets) {
+                    
+                    if(ticket.getEntity() instanceof IChunkLoader) {
+                        ((IChunkLoader)ticket.getEntity()).init(ticket);
+                    }
+                }
+            }
+        });
 
-		CommonEventHandler handler = new CommonEventHandler();
-		ClowderEvents clowder = new ClowderEvents();
-		//WorldController pon4 = new WorldController();
-		
-		FMLCommonHandler.instance().bus().register(handler);
-		FMLCommonHandler.instance().bus().register(clowder);
-		//FMLCommonHandler.instance().bus().register(pon4);
-		MinecraftForge.EVENT_BUS.register(handler);
-		MinecraftForge.EVENT_BUS.register(clowder);
-		//MinecraftForge.EVENT_BUS.register(pon4);
-		
-		GameRegistry.registerWorldGenerator(worldGenMoon, 0);
-		DimensionManager.registerProviderType(15, WorldProviderMoon.class, false);
-	    DimensionManager.registerDimension(15, 15);
-	}
-	
-	private String regexify(String string) {
-		
-		String neue = "(?i)";
-		boolean first = true;
-		
-		for(char c : string.toCharArray()) {
-			
-			if(!first)
-				neue += "[ \\.\\-_@$!#:;&\\(\\)\\-¶,\\.\\?+×÷=%/*€£￦¥¿¡^\\[\\]<>~`§μ¬Г´·\\{\\}©|¤Ωθฯ]{0,3}";
-			
-			first = false;
-			
-			if(c == 'a') {
-				neue += "[aäáàâåǎ]";
-			} else if(c == 'c') {
-				neue += "[cĉčćç]";
-			} else if(c == 'e') {
-				neue += "[eëéèêě]";
-			} else if(c == 'i') {
-				neue += "[iịǐíìîï]";
-			} else if(c == 'j') {
-				neue += "[jĵǰ]";
-			} else if(c == 'm') {
-				neue += "[mṃ]";
-			} else if(c == 'n') {
-				neue += "[nňṇńņ]";
-			} else if(c == 'o') {
-				neue += "[oöóòôǒọ]";
-			} else if(c == 's') {
-				neue += "[sŝšṣśşŝ]";
-			} else if(c == 'u') {
-				neue += "[uüúùûůǔụ]";
-			} else {
-				neue += c;
-			}
-		}
-		
-		return neue;
-	}
+        CommonEventHandler handler = new CommonEventHandler();
+        ClowderEvents clowder = new ClowderEvents();
+        //WorldController pon4 = new WorldController();
+        
+        FMLCommonHandler.instance().bus().register(handler);
+        FMLCommonHandler.instance().bus().register(clowder);
+        //FMLCommonHandler.instance().bus().register(pon4);
+        MinecraftForge.EVENT_BUS.register(handler);
+        MinecraftForge.EVENT_BUS.register(clowder);
+        //MinecraftForge.EVENT_BUS.register(pon4);
+        
+        GameRegistry.registerWorldGenerator(worldGenMoon, 0);
+        DimensionManager.registerProviderType(15, WorldProviderMoon.class, false);
+        DimensionManager.registerDimension(15, 15);
+    }
+    
+    private String regexify(String string) {
+        
+        String neue = "(?i)";
+        boolean first = true;
+        
+        for(char c : string.toCharArray()) {
+            
+            if(!first)
+                neue += "[ \\.\\-_@$!#:;&\\(\\)\\-¶,\\.\\?+×÷=%/*€£￦¥¿¡^\\[\\]<>~`§μ¬Г´·\\{\\}©|¤Ωθฯ]{0,3}";
+            
+            first = false;
+            
+            if(c == 'a') {
+                neue += "[aäáàâåǎ]";
+            } else if(c == 'c') {
+                neue += "[cĉčćç]";
+            } else if(c == 'e') {
+                neue += "[eëéèêě]";
+            } else if(c == 'i') {
+                neue += "[iịǐíìîï]";
+            } else if(c == 'j') {
+                neue += "[jĵǰ]";
+            } else if(c == 'm') {
+                neue += "[mṃ]";
+            } else if(c == 'n') {
+                neue += "[nňṇńņ]";
+            } else if(c == 'o') {
+                neue += "[oöóòôǒọ]";
+            } else if(c == 's') {
+                neue += "[sŝšṣśşŝ]";
+            } else if(c == 'u') {
+                neue += "[uüúùûůǔụ]";
+            } else {
+                neue += c;
+            }
+        }
+        
+        return neue;
+    }
 
-	@EventHandler
-	public static void load(FMLInitializationEvent event)
-	{
-		
-	}
-	
-	@EventHandler
-	public static void PostLoad(FMLPostInitializationEvent event)
-	{
-		//in postload, long after all blocks have been registered, the buffered config is being evaluated and processed.
-		processBuffer();
-		
-		try {
-			BobbyBreaker.loadConfiguration(jsonDir);
-		} catch (JsonIOException e) {
-			e.printStackTrace();
-		} catch (JsonSyntaxException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@EventHandler
-	public void ServerLoad(FMLServerStartingEvent event)
-	{
-		event.registerServerCommand(new CommandXPlayer());
-		event.registerServerCommand(new CommandXDebug());
-		event.registerServerCommand(new CommandXMarket());
-		event.registerServerCommand(new CommandClowder());
-		event.registerServerCommand(new CommandClowderChat());
-		event.registerServerCommand(new CommandClowderAdmin());
-		event.registerServerCommand(new CommandXShop());
-	}
+    @EventHandler
+    public static void load(FMLInitializationEvent event)
+    {
+        
+    }
+    
+    @EventHandler
+    public static void PostLoad(FMLPostInitializationEvent event)
+    {
+        //in postload, long after all blocks have been registered, the buffered config is being evaluated and processed.
+        processBuffer();
+        
+        try {
+            BobbyBreaker.loadConfiguration(jsonDir);
+        } catch (JsonIOException e) {
+            e.printStackTrace();
+        } catch (JsonSyntaxException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @EventHandler
+    public void ServerLoad(FMLServerStartingEvent event)
+    {
+        event.registerServerCommand(new CommandXPlayer());
+        event.registerServerCommand(new CommandXDebug());
+        event.registerServerCommand(new CommandXMarket());
+        event.registerServerCommand(new CommandClowder());
+        event.registerServerCommand(new CommandClowderChat());
+        event.registerServerCommand(new CommandClowderAdmin());
+        event.registerServerCommand(new CommandXShop());
+    }
 
-	public static List<Block> blastShields = new ArrayList();
-	public static List<GriefEntry> zombWhitelist = new ArrayList();
-	public static List<ControlEntry> controlList = new ArrayList();
-	public static List<PotionEntry> potionList = new ArrayList();
-	public static List<ImmunityEntry> immunityList = new ArrayList();
-	public static String[] twilightBuffer;
-	public static List<Integer> t2Buffer = new ArrayList();
-	public static boolean skeletonAIDS = false;
-	public static float skeletonHIV = 2.5F;
-	public static boolean zombAI = true;
-	public static boolean creepAI = true;
-	public static boolean surfaceMobs = false;
+    public static List<Block> blastShields = new ArrayList();
+    public static List<GriefEntry> zombWhitelist = new ArrayList();
+    public static List<ControlEntry> controlList = new ArrayList();
+    public static List<PotionEntry> potionList = new ArrayList();
+    public static List<ImmunityEntry> immunityList = new ArrayList();
+    public static String[] twilightBuffer;
+    public static List<Integer> t2Buffer = new ArrayList();
+    public static boolean skeletonAIDS = false;
+    public static float skeletonHIV = 2.5F;
+    public static boolean zombAI = true;
+    public static boolean creepAI = true;
+    public static boolean surfaceMobs = false;
 
-	public static List<String> u2 = new ArrayList();
-	public static List<String> u1 = new ArrayList();
-	public static List<String> d1 = new ArrayList();
-	public static List<String> d2 = new ArrayList();
-	public static boolean u2en = true;
-	public static boolean u1en = true;
-	public static boolean d1en = true;
-	public static boolean d2en = true;
-	public static int updateInterval = 10 * 60;
-	public static int stockCap = 50;
-	
-	public static String jsonDir;
-	
-	public static Configuration config;
-	
-	public void loadConfig(FMLPreInitializationEvent event)
-	{
-		if(logger == null)
-			logger = event.getModLog();
-		
-		PacketDispatcher.registerPackets();
+    public static List<String> u2 = new ArrayList();
+    public static List<String> u1 = new ArrayList();
+    public static List<String> d1 = new ArrayList();
+    public static List<String> d2 = new ArrayList();
+    public static boolean u2en = true;
+    public static boolean u1en = true;
+    public static boolean d1en = true;
+    public static boolean d2en = true;
+    public static int updateInterval = 10 * 60;
+    public static int stockCap = 50;
+    
+    public static String jsonDir;
+    
+    public static Configuration config;
+    
+    public void loadConfig(FMLPreInitializationEvent event)
+    {
+        if(logger == null)
+            logger = event.getModLog();
+        
+        PacketDispatcher.registerPackets();
 
-		config = new Configuration(event.getSuggestedConfigurationFile());
-		jsonDir = config.getConfigFile().getAbsolutePath().replace("cfg", "json");
-		
-		config.load();
-		
-		Property propRadarRange = config.get("RADAR", "radarRange", 1000);
+        config = new Configuration(event.getSuggestedConfigurationFile());
+        jsonDir = config.getConfigFile().getAbsolutePath().replace("cfg", "json");
+        
+        config.load();
+        
+        Property propRadarRange = config.get("RADAR", "radarRange", 1000);
         propRadarRange.comment = "Range of the radar, 50 will result in 100x100 block area covered";
         radarRange = propRadarRange.getInt();
         
@@ -687,20 +687,20 @@ public class MainRegistry
         mSpawn = mSpawnP.getInt();
         
         Property drywall = config.get("MISSILE", "blastShields", new String[] {
-        		"" + Block.getIdFromBlock(Blocks.obsidian),
-        		"" + Block.getIdFromBlock(ModBlocks.concrete),
-        		"" + Block.getIdFromBlock(ModBlocks.concrete_bricks),
-        		"" + Block.getIdFromBlock(ModBlocks.vault_door),
-        		"" + Block.getIdFromBlock(ModBlocks.vault_door_dummy)});
+                "" + Block.getIdFromBlock(Blocks.obsidian),
+                "" + Block.getIdFromBlock(ModBlocks.concrete),
+                "" + Block.getIdFromBlock(ModBlocks.concrete_bricks),
+                "" + Block.getIdFromBlock(ModBlocks.vault_door),
+                "" + Block.getIdFromBlock(ModBlocks.vault_door_dummy)});
         drywall.comment = "What blocks can block fire blasts (default: obsidian, concrete, concrete bricks, vault door, vault door dummy)";
         String[] vals = drywall.getStringList();
         
         for(String val : vals) {
-        	
-        	int i = Integer.parseInt(val);
-        	
-        	if(i != 0)
-        		t2Buffer.add(i);
+            
+            int i = Integer.parseInt(val);
+            
+            if(i != 0)
+                t2Buffer.add(i);
         }
         
         Property nukeRadiusP = config.get("NUKE", "nukeRadius", 100);
@@ -806,17 +806,17 @@ public class MainRegistry
         String[] ec = entcontrol.getStringList();
         
         for(String val : ec) {
-        	
-        	try {
-        		
-	        	String s = val.split(":")[0];
-	        	int chance = Integer.valueOf(val.split(":")[1]);
-	        	
-	        	controlList.add(new ControlEntry(s, chance));
-        	
-        	} catch(Exception ex) {
-        		logger.error("Invalid config entry '" + val + "'");
-        	}
+            
+            try {
+                
+                String s = val.split(":")[0];
+                int chance = Integer.valueOf(val.split(":")[1]);
+                
+                controlList.add(new ControlEntry(s, chance));
+            
+            } catch(Exception ex) {
+                logger.error("Invalid config entry '" + val + "'");
+            }
         }
         /////////////////////////////////////////////////////////////////////////
         Property entfx = config.get("ENTITYCONTROL", "entityEffects", new String[] { "" });
@@ -824,19 +824,19 @@ public class MainRegistry
         String[] fx = entfx.getStringList();
         
         for(String val : fx) {
-        	
-        	try {
-        		
-	        	String s = val.split(":")[0];
-	        	int id = Integer.valueOf(val.split(":")[1]);
-	        	int level = Integer.valueOf(val.split(":")[2]);
-	        	int dura = Integer.valueOf(val.split(":")[3]);
-	        	
-	        	potionList.add(new PotionEntry(s, id, dura, level));
-        	
-        	} catch(Exception ex) {
-        		logger.error("Invalid config entry '" + val + "'");
-        	}
+            
+            try {
+                
+                String s = val.split(":")[0];
+                int id = Integer.valueOf(val.split(":")[1]);
+                int level = Integer.valueOf(val.split(":")[2]);
+                int dura = Integer.valueOf(val.split(":")[3]);
+                
+                potionList.add(new PotionEntry(s, id, dura, level));
+            
+            } catch(Exception ex) {
+                logger.error("Invalid config entry '" + val + "'");
+            }
         }
         /////////////////////////////////////////////////////////////////////////
         Property entimm = config.get("ENTITYCONTROL", "entityImmunity", new String[] { "" });
@@ -844,111 +844,111 @@ public class MainRegistry
         String[] imm = entimm.getStringList();
         
         for(String val : imm) {
-        	
-        	try {
-        		
-	        	String s = val.split(":")[0];
-	        	String d = val.split(":")[1];
-	        	
-	        	immunityList.add(new ImmunityEntry(s, d));
-        	
-        	} catch(Exception ex) {
-        		logger.error("Invalid config entry '" + val + "'");
-        	}
+            
+            try {
+                
+                String s = val.split(":")[0];
+                String d = val.split(":")[1];
+                
+                immunityList.add(new ImmunityEntry(s, d));
+            
+            } catch(Exception ex) {
+                logger.error("Invalid config entry '" + val + "'");
+            }
         }
         /////////////////////////////////////////////////////////////////////////
         Property stocks = config.get("STOCKMARKET", "stocks", new String[] {
-        		"Bobcum Motors:CUM:50:2.5:7.5:10:7.5:2.5",
-        		"Bingus International:BIN:50:2.5:7.5:10:7.5:2.5",
-        		"Spark Corporation:SPK:50:2.5:7.5:10:7.5:2.5",
-        		"FlimFlam Industries:FLIM:50:2.5:7.5:10:7.5:2.5",
-        		"Magpie Electricals:MAG:50:2.5:7.5:10:7.5:2.5",
-        		"Papa G Softworks:PAPA:50:2.5:7.5:10:7.5:2.5"
+                "Bobcum Motors:CUM:50:2.5:7.5:10:7.5:2.5",
+                "Bingus International:BIN:50:2.5:7.5:10:7.5:2.5",
+                "Spark Corporation:SPK:50:2.5:7.5:10:7.5:2.5",
+                "FlimFlam Industries:FLIM:50:2.5:7.5:10:7.5:2.5",
+                "Magpie Electricals:MAG:50:2.5:7.5:10:7.5:2.5",
+                "Papa G Softworks:PAPA:50:2.5:7.5:10:7.5:2.5"
         });
         stocks.comment = "NAME:SHORTNAME:STARTING VALUE:U2CHANCE:U1CHANCE:NCHANCE:D1CHANCE:D2CHANCE";
         String[] sto = stocks.getStringList();
         
         for(String val : sto) {
-        	
-        	try {
-        		
-	        	String name = val.split(":")[0];
-	        	String shortname = val.split(":")[1];
-	        	float start = Float.parseFloat(val.split(":")[2]);
-	        	float u2 = Float.parseFloat(val.split(":")[3]);
-	        	float u1 = Float.parseFloat(val.split(":")[4]);
-	        	float n = Float.parseFloat(val.split(":")[5]);
-	        	float d1 = Float.parseFloat(val.split(":")[6]);
-	        	float d2 = Float.parseFloat(val.split(":")[7]);
-	        	
-	        	StockData.stocks.add(new Stock(name, shortname, start, u2, u1, n, d1, d2));
-        	
-        	} catch(Exception ex) {
-        		logger.error("Invalid config entry '" + val + "'");
-        	}
+            
+            try {
+                
+                String name = val.split(":")[0];
+                String shortname = val.split(":")[1];
+                float start = Float.parseFloat(val.split(":")[2]);
+                float u2 = Float.parseFloat(val.split(":")[3]);
+                float u1 = Float.parseFloat(val.split(":")[4]);
+                float n = Float.parseFloat(val.split(":")[5]);
+                float d1 = Float.parseFloat(val.split(":")[6]);
+                float d2 = Float.parseFloat(val.split(":")[7]);
+                
+                StockData.stocks.add(new Stock(name, shortname, start, u2, u1, n, d1, d2));
+            
+            } catch(Exception ex) {
+                logger.error("Invalid config entry '" + val + "'");
+            }
         }
         /////////////////////////////////////////////////////////////////////////
         String[] u2 = createConfigStringList(config, "STOCKMARKET", "u2messages", "Broadcast for econ boosts, %s replaces company short", new String[] { "%s's newest product proved to be a smash hit!", "%s is doing very well this quarter!" } );
         
         for(String val : u2) {
-        	
-        	if(val.contains("%s"))
-        		this.u2.add(val);
-        	else
-        		logger.error("Invalid config entry '" + val + "'");
+            
+            if(val.contains("%s"))
+                this.u2.add(val);
+            else
+                logger.error("Invalid config entry '" + val + "'");
         }
         
         String[] u1 = createConfigStringList(config, "STOCKMARKET", "u1messages", "Broadcast for small econ boosts, %s replaces company short", new String[] { "%s's newest product was featured in a famous television show!", "Customer ratings for %s's services are on the rise!" } );
         
         for(String val : u1) {
-        	
-        	if(val.contains("%s"))
-        		this.u1.add(val);
-        	else
-        		logger.error("Invalid config entry '" + val + "'");
+            
+            if(val.contains("%s"))
+                this.u1.add(val);
+            else
+                logger.error("Invalid config entry '" + val + "'");
         }
         
         String[] d1 = createConfigStringList(config, "STOCKMARKET", "d1messages", "Broadcast for small econ falls, %s replaces company short", new String[] { "%s's newest product was poorly received.", "%s lost a lawsuit over a faulty product." } );
         
         for(String val : d1) {
-        	
-        	if(val.contains("%s"))
-        		this.d1.add(val);
-        	else
-        		logger.error("Invalid config entry '" + val + "'");
+            
+            if(val.contains("%s"))
+                this.d1.add(val);
+            else
+                logger.error("Invalid config entry '" + val + "'");
         }
         
         String[] d2 = createConfigStringList(config, "STOCKMARKET", "d2messages", "Broadcast for econ falls, %s replaces company short", new String[] { "%s's newest product was an utter flop.", "Public outrage after a poor advertising campaign made by %s." } );
         
         for(String val : d2) {
-        	
-        	if(val.contains("%s"))
-        		this.d2.add(val);
-        	else
-        		logger.error("Invalid config entry '" + val + "'");
+            
+            if(val.contains("%s"))
+                this.d2.add(val);
+            else
+                logger.error("Invalid config entry '" + val + "'");
         }
         
         String[] flags = createConfigStringList(config, "CLOWDER", "flags", "[name of the flag]:[whether it's shown in the listing]:[whether it has a tintable base]:[whether it has a static overlay]",
-        		new String[] { "usa:true:true:true" } );
+                new String[] { "usa:true:true:true" } );
         
         for(String val : flags) {
-        	
-        	try {
-	        	String fname = val.split(":")[0];
-	        	boolean vis = Boolean.parseBoolean(val.split(":")[1]);
-	        	boolean base = Boolean.parseBoolean(val.split(":")[2]);
-	        	boolean over = Boolean.parseBoolean(val.split(":")[3]);
-	        	
-	        	EnumHelper.addEnum(ClowderFlag.class, fname, new Class[] { String.class, boolean.class, boolean.class, boolean.class }, new Object[] {fname, vis, base, over} );
-	        	System.out.println("Successfully added flag " + fname);
-        	} catch(Exception ex) {
-        		logger.error("Invalid config entry '" + val + "'");
-        	}
+            
+            try {
+                String fname = val.split(":")[0];
+                boolean vis = Boolean.parseBoolean(val.split(":")[1]);
+                boolean base = Boolean.parseBoolean(val.split(":")[2]);
+                boolean over = Boolean.parseBoolean(val.split(":")[3]);
+                
+                EnumHelper.addEnum(ClowderFlag.class, fname, new Class[] { String.class, boolean.class, boolean.class, boolean.class }, new Object[] {fname, vis, base, over} );
+                System.out.println("Successfully added flag " + fname);
+            } catch(Exception ex) {
+                logger.error("Invalid config entry '" + val + "'");
+            }
         }
         
 
-    	EnumHelper.addEnum(ClowderFlag.class, "GETTY", new Class[] { String.class, boolean.class }, new Object[] {"getty", false} );
-    	EnumHelper.addEnum(ClowderFlag.class, "COMRADES", new Class[] { String.class, boolean.class }, new Object[] {"comrades", false} );
+        EnumHelper.addEnum(ClowderFlag.class, "GETTY", new Class[] { String.class, boolean.class }, new Object[] {"getty", false} );
+        EnumHelper.addEnum(ClowderFlag.class, "COMRADES", new Class[] { String.class, boolean.class }, new Object[] {"comrades", false} );
 
         warpCost = createConfigInt(config, "CLOWDER", "warpCost", "How much prestige a warp point costs to create", 25);
         territoryDelay = createConfigInt(config, "CLOWDER", "territoryDelay", "How many ticks inbetween territory validation operations", 5);
@@ -1002,191 +1002,191 @@ public class MainRegistry
         File schemDir = new File(event.getModConfigurationDirectory() + "/schematics");
         
         if(!schemDir.exists())
-        	schemDir.mkdir();
+            schemDir.mkdir();
         
         for(File f : schemDir.listFiles()) {
-        	if(f.isFile() && f.getName().endsWith(".schematic") && f.getName().split("_").length == 2) {
-        		
-        		Schematic schem = SchematicLoader.readFromFile(f);
-        		
-        		int val = Integer.parseInt(f.getName().split("_")[1].replace("_", "").replace(".schematic", ""));
-        		
-        		if(schem != null) {
-        			schem.value = val;
-        			schems.add(schem);
-        		}
-        	}
+            if(f.isFile() && f.getName().endsWith(".schematic") && f.getName().split("_").length == 2) {
+                
+                Schematic schem = SchematicLoader.readFromFile(f);
+                
+                int val = Integer.parseInt(f.getName().split("_")[1].replace("_", "").replace(".schematic", ""));
+                
+                if(schem != null) {
+                    schem.value = val;
+                    schems.add(schem);
+                }
+            }
         }
-	}
-	
-	public static List<Schematic> schems = new ArrayList();
-	
-	private static int createConfigInt(Configuration config, String category, String name, String comment, int def) {
+    }
+    
+    public static List<Schematic> schems = new ArrayList();
+    
+    private static int createConfigInt(Configuration config, String category, String name, String comment, int def) {
 
         Property prop = config.get(category, name, def);
         prop.comment = comment;
         return prop.getInt();
-	}
-	
-	private static boolean createConfigBool(Configuration config, String category, String name, String comment, boolean def) {
+    }
+    
+    private static boolean createConfigBool(Configuration config, String category, String name, String comment, boolean def) {
 
         Property prop = config.get(category, name, def);
         prop.comment = comment;
         return prop.getBoolean();
-	}
-	
-	private static double createConfigDouble(Configuration config, String category, String name, String comment, double def) {
+    }
+    
+    private static double createConfigDouble(Configuration config, String category, String name, String comment, double def) {
 
         Property prop = config.get(category, name, def);
         prop.comment = comment;
         return prop.getDouble();
-	}
-	
-	private static String[] createConfigStringList(Configuration config, String category, String name, String comment, String[] def) {
+    }
+    
+    private static String[] createConfigStringList(Configuration config, String category, String name, String comment, String[] def) {
 
         Property prop = config.get(category, name, def);
         prop.comment = comment;
         return prop.getStringList();
-	}
-	
-	private static void processBuffer() {
-		for(String val : twilightBuffer) {
-        	
-        	try {
-        		
-        		String name = val.split(":")[0];
-        		//gets block from string with no modifiers (intended for vanilla)
-        		Block b = Block.getBlockFromName(name);
-        		
-        		//in case the block uses the integer id notation
-        		if(b == null) {
-        			try {
-        				b = Block.getBlockById(Integer.parseInt(name));
-        			} catch(Exception ex) { }
-        		}
-        		
-        		//if there is no block found, it'll retry with the proper domain format (modid:name)
-        		//first _ is replaced with : (intended for modded blocks with the inclusion of the modid)
-        		if(b == null)
-        			//b = Block.getBlockFromName(name.replaceFirst("_", ":"));
-        			b = RegistryUtil.getBlockByNameNoCaseOrPoint(name);
-        		
-        		//if there is still no block found, it'll retry with the tile. prefix
-        		//in addition to the replacement of the _, it'll search for 'tile' and add a period to create 'tile.' (intended for HFR blocks)
-        		if(b == null) {
-        			String nname = name.replaceFirst("tile", "tile.");
-        			//b = Block.getBlockFromName(nname.replaceFirst("_", ":"));
-        			b = RegistryUtil.getBlockByNameNoCaseOrPoint(nname);
-        		}
-        		
-	        	int hp = Integer.valueOf(val.split(":")[1]);
-	        	
-	        	if(b != null)
-	        		zombWhitelist.add(new GriefEntry(b, hp));
-	        	else
-	        		logger.error("Invalid block entry '" + val.split(":")[0] + "'");
-        	
-        	} catch(Exception ex) {
-        		logger.error("Invalid config entry '" + val + "'");
-        	}
+    }
+    
+    private static void processBuffer() {
+        for(String val : twilightBuffer) {
+            
+            try {
+                
+                String name = val.split(":")[0];
+                //gets block from string with no modifiers (intended for vanilla)
+                Block b = Block.getBlockFromName(name);
+                
+                //in case the block uses the integer id notation
+                if(b == null) {
+                    try {
+                        b = Block.getBlockById(Integer.parseInt(name));
+                    } catch(Exception ex) { }
+                }
+                
+                //if there is no block found, it'll retry with the proper domain format (modid:name)
+                //first _ is replaced with : (intended for modded blocks with the inclusion of the modid)
+                if(b == null)
+                    //b = Block.getBlockFromName(name.replaceFirst("_", ":"));
+                    b = RegistryUtil.getBlockByNameNoCaseOrPoint(name);
+                
+                //if there is still no block found, it'll retry with the tile. prefix
+                //in addition to the replacement of the _, it'll search for 'tile' and add a period to create 'tile.' (intended for HFR blocks)
+                if(b == null) {
+                    String nname = name.replaceFirst("tile", "tile.");
+                    //b = Block.getBlockFromName(nname.replaceFirst("_", ":"));
+                    b = RegistryUtil.getBlockByNameNoCaseOrPoint(nname);
+                }
+                
+                int hp = Integer.valueOf(val.split(":")[1]);
+                
+                if(b != null)
+                    zombWhitelist.add(new GriefEntry(b, hp));
+                else
+                    logger.error("Invalid block entry '" + val.split(":")[0] + "'");
+            
+            } catch(Exception ex) {
+                logger.error("Invalid config entry '" + val + "'");
+            }
         }
-		
-		for(Integer i : t2Buffer) {
-			
-			Block b = Block.getBlockById(i);
-			
-			if(b != Blocks.air)
-				blastShields.add(b);
-		}
-	}
-	
-	public static class GriefEntry {
-		
-		int hp;
-		Block block;
-		
-		public GriefEntry(Block b, int hp) {
-			this.block = b;
-			this.hp = hp;
-		}
-		
-		public static int getEntry(Block b) {
-			
-			for(GriefEntry ent : zombWhitelist) {
-				if(ent.block == b)
-					return ent.hp;
-			}
-			
-			return -1;
-		}
-	}
-	
-	public static class ControlEntry {
-		
-		int chance;
-		String entity;
-		
-		public ControlEntry(String e, int chance) {
-			this.entity = e;
-			this.chance = chance;
-		}
-		
-		public static int getEntry(Entity e) {
-			
-			for(ControlEntry ent : controlList) {
-				if(ent.entity.equals(EntityList.getEntityString(e)))
-					return ent.chance;
-			}
-			
-			return -1;
-		}
-	}
-	
-	public static class PotionEntry {
+        
+        for(Integer i : t2Buffer) {
+            
+            Block b = Block.getBlockById(i);
+            
+            if(b != Blocks.air)
+                blastShields.add(b);
+        }
+    }
+    
+    public static class GriefEntry {
+        
+        int hp;
+        Block block;
+        
+        public GriefEntry(Block b, int hp) {
+            this.block = b;
+            this.hp = hp;
+        }
+        
+        public static int getEntry(Block b) {
+            
+            for(GriefEntry ent : zombWhitelist) {
+                if(ent.block == b)
+                    return ent.hp;
+            }
+            
+            return -1;
+        }
+    }
+    
+    public static class ControlEntry {
+        
+        int chance;
+        String entity;
+        
+        public ControlEntry(String e, int chance) {
+            this.entity = e;
+            this.chance = chance;
+        }
+        
+        public static int getEntry(Entity e) {
+            
+            for(ControlEntry ent : controlList) {
+                if(ent.entity.equals(EntityList.getEntityString(e)))
+                    return ent.chance;
+            }
+            
+            return -1;
+        }
+    }
+    
+    public static class PotionEntry {
 
-		int potion;
-		int duration;
-		int amplifier;
-		String entity;
-		
-		public PotionEntry(String e, int potion, int duration, int amplifier) {
-			this.entity = e;
-			this.potion = potion;
-			this.duration = duration;
-			this.amplifier = amplifier;
-		}
-		
-		public static int[] getEntry(Entity e) {
-			
-			for(PotionEntry ent : potionList) {
-				if(ent.entity.equals(EntityList.getEntityString(e)))
-					return new int[] {ent.potion, ent.duration, ent.amplifier};
-			}
-			
-			return null;
-		}
-	}
-	
-	public static class ImmunityEntry {
+        int potion;
+        int duration;
+        int amplifier;
+        String entity;
+        
+        public PotionEntry(String e, int potion, int duration, int amplifier) {
+            this.entity = e;
+            this.potion = potion;
+            this.duration = duration;
+            this.amplifier = amplifier;
+        }
+        
+        public static int[] getEntry(Entity e) {
+            
+            for(PotionEntry ent : potionList) {
+                if(ent.entity.equals(EntityList.getEntityString(e)))
+                    return new int[] {ent.potion, ent.duration, ent.amplifier};
+            }
+            
+            return null;
+        }
+    }
+    
+    public static class ImmunityEntry {
 
-		String entity;
-		String damage;
-		
-		public ImmunityEntry(String e, String atk) {
-			this.entity = e;
-			this.damage = atk;
-		}
-		
-		public static List<String> getEntry(Entity e) {
-			
-			List<String> list = new ArrayList();
-			
-			for(ImmunityEntry ent : immunityList) {
-				if(ent.entity.equals(EntityList.getEntityString(e)))
-					list.add(ent.damage);
-			}
-			
-			return list;
-		}
-	}
+        String entity;
+        String damage;
+        
+        public ImmunityEntry(String e, String atk) {
+            this.entity = e;
+            this.damage = atk;
+        }
+        
+        public static List<String> getEntry(Entity e) {
+            
+            List<String> list = new ArrayList();
+            
+            for(ImmunityEntry ent : immunityList) {
+                if(ent.entity.equals(EntityList.getEntityString(e)))
+                    list.add(ent.damage);
+            }
+            
+            return list;
+        }
+    }
 }
